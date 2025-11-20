@@ -1,16 +1,16 @@
 
 # Table of Contents
 
-1.  [I'm getting depressed customising my resume to every job I apply. I feel like my life is being wasted just on formatting. Let's do a simple math:](#org8834cfe):ATTACH:
-    1.  [After a careful examination, I plan to go with plan B, i.e Making this thing portable.](#orgc6cf7f6)
-2.  [Proof of concept](#orgd2df78f)
-3.  [Starting with docker, I'm using arch, so installation and config of the docker doesn't seem to much. I just run](#org191ea68)
-    1.  [Found something interesting on why docker need root previlages,   :ATTACH:x](#orgead5214)
+1. I'm getting depressed customising my resume to every job I apply. I feel like my life is being wasted just on formatting. Let's do a simple math.
+1.  After a careful examination, I plan to go with plan B, i.e Making this thing portable.
+2.  Proof of concept
+3.  Starting with docker, I'm using arch, so installation and config of the docker doesn't seem to much. I just run ~pacman -S docker~
 
+Found something interesting on why docker need root previlages
 
 <a id="org8834cfe"></a>
 
-# I'm getting depressed customising my resume to every job I apply. I feel like my life is being wasted just on formatting. Let's do a simple math:     :ATTACH:
+# I'm getting depressed customising my resume to every job I apply. I feel like my life is being wasted just on formatting. Let's do a simple math: 
 
     // Consider 5 job application
     5 x 20 min(Resumes, cover letters, application) = 100 min
