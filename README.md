@@ -4,9 +4,7 @@
 1. I'm getting depressed customising my resume to every job I apply. I feel like my life is being wasted just on formatting. Let's do a simple math.
 1.  After a careful examination, I plan to go with plan B, i.e Making this thing portable.
 2.  Proof of concept
-3.  Starting with docker, I'm using arch, so installation and config of the docker doesn't seem to much. I just run `pacman -S docker`
-
-Found something interesting on why docker need root previlages
+3.  Starting with docker, I'm using arch, so installation and config of the docker doesn't seem to much
 
 <a id="org8834cfe"></a>
 
@@ -19,9 +17,7 @@ Found something interesting on why docker need root previlages
 
 So, My goal is to reduce this time to roughly 5 minutes which in turns gives me back my 15 minutes 😃.
 The architecture in my mind:
-
-![alt text](https://github.com/Azezal4/resume-optimizer/blob/main/assets/1.png)
-
+![alt text](https://github.com/Azezal4/resume-optimizer/blob/main/assets/Untitled%20Diagram.drawio.png)
 
 <a id="orgc6cf7f6"></a>
 
@@ -31,7 +27,7 @@ The architecture in my mind:
 <a id="orgd2df78f"></a>
 
 # Proof of concept
-
+![alt text](https://github.com/Azezal4/resume-optimizer/blob/main/assets/1.png)
 
 <a id="org191ea68"></a>
 
@@ -65,5 +61,4 @@ So what do we learn from this?
 
 After all of this, we still need to install `nvidia-container-toolkit` cause I have some gpu 😀.
 Everything runs great on a containeraized environment.
-![alt text](https://github.com/Azezal4/resume-optimizer/blob/main/assets/Untitled%20Diagram.drawio.png)
 
