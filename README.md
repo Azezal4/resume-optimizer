@@ -62,3 +62,9 @@ So what do we learn from this?
 After all of this, we still need to install `nvidia-container-toolkit` cause I have some gpu 😀.
 Everything runs great on a containeraized environment.
 
+## Finally running the whole thing:
+`docker compose up --build -d`
+Keep in mind the docker installs the required ML model so, it may take some time to reflect on the app.
+To check the status of the model, run 
+`docker compose logs -f llm-service`
+After done should be running on localhost.
