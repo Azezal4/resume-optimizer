@@ -8,7 +8,8 @@
 
 <a id="org8834cfe"></a>
 
-# I'm getting depressed customising my resume to every job I apply. I feel like my life is being wasted just on formatting. Let's do a simple math: 
+## I'm getting depressed customising my resume to every job I apply. I feel like my life is being wasted just on formatting.
+Let's do a simple math: 
 
     // Consider 5 job application
     5 x 20 min(Resumes, cover letters, application) = 100 min
