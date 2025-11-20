@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # ----------------------------------------------------
+  # 1. LLM Service (Ollama/Gemma 3)
+  # ----------------------------------------------------
+  llm-service:
+    image: ollama/ollama:latest
+    container_name: gemma-llm-server
+    # ... (deploy, ports, and volumes remain the same) ...
+    
+    volumes:
+      - ollama_models:/root/.ollama
+    entrypoint: [ "/bin/sh", "-c" ]
+    command: 
+      - |
+        ollama serve &
+        while ! ollama list; do sleep 1; done
+        ollama pull gemma3:latest
+        wait
+
+    restart: unless-stopped
+              
+    # The container listens on port 11434. We expose it so your app can find it.
+    ports:
+      # Exposes the API to your local machine for optional testing (http://localhost:11434)
+      - "11434:11434"
+      
+  # ----------------------------------------------------
+  # 2. Application Service (Your Streamlit/Python App)
+  # ----------------------------------------------------
+  app-service:
+    # Build the image using the Dockerfile in the current directory (where this file is)
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      
+    container_name: resume-app-ui
+    
+    # Expose the Streamlit web interface to your host PC (access at http://localhost:8501)
+    ports:
+      - "8501:8501" 
+      
+    # Crucial: This environment variable tells your Python app where the Ollama server is located.
+    # The hostname 'llm-service' is the name of the other service in this file.
+    environment:
+      - OLLAMA_HOST=http://localhost:11434
+      
+    # Ensures the LLM server starts before the application tries to connect to it.
+    depends_on:
+      - llm-service
+    
+    restart: unless-stopped
+
+# Define the volume used for persistent storage
+volumes:
+  ollama_models:
