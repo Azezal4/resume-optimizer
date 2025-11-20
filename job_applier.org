@@ -1,0 +1,43 @@
+* I'm getting depressed customising my resume to every job I apply. I feel like my life is being wasted just on formatting. Let's do a simple math: :ATTACH:
+:PROPERTIES:
+:ID:       b7504151-6e77-455e-a0d2-2417550b62a6
+:END:
+#+begin_src
+  // Consider 5 job application
+  5 x 20 min(Resumes, cover letters, application) = 100 min
+  // I've been applying for 3 months now so,
+  100 x 30 = 3000 min (i.e 50 days sad 😒) damn.....  
+#+end_src
+So, My goal is to reduce this time to roughly 5 minutes which in turns gives me back my 15 minutes 😃.
+The architecture in my mind:
+
+[[file:/home/ujjwal/Downloads/Untitled Diagram.drawio.png]]
+
+** After a careful examination, I plan to go with plan B, i.e Making this thing portable.
+
+
+
+* Starting with docker, I'm using arch, so installation and config of the docker doesn't seem to much. I just run
+#+begin_src
+  sudo pacman -S docker
+  systemctl start/enable docker.service
+#+end_src
+*/ Note: The docker service is only accessible by root user so change in permission is necessary.
+
+#+begin_src
+  sudo useradd docker // but most of the time user is already created
+  sudo usermod -aG docker $USER // need to add the user to the docker group
+  // check
+  docker ps // should work
+#+end_src
+
+** Found something interesting on why docker need root previlages,
++ docker runs KVM
+  + KVM being a hypervisor, needs the base level permission
+
+Now, After spending 1 hour of debugging on why ollama is not being installed, i forgot yesterday exists. And Yes, yesterday yours truly tested ollama on my pc globally. Without any env or being containerized.
+So what do we learn from this?
++ search for open port
++ check for any processes using that port
++ kill the damn port
+After all of this, we still need to install ~nvidia-container-toolkit~ cause I have some gpu
